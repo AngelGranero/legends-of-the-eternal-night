@@ -1,0 +1,54 @@
+{
+    "id": "legends-of-the-eternal-night",
+    "title": "Legends of the Eternal Night",
+    "description": "Un sistema de juego de rol basado en fantasía épica, con reglas sencillas y habilidades que lanzan 3d6.",
+    "version": "1.0.0",
+    "compatibility": {
+      "minimum": 12,
+      "verified": 12
+    },
+    "authors": [{
+      "name": "Ángel Granero",
+      "url": "url.com",
+      "email": "email@com.com",
+      "discord": "discord"
+    }],
+    "esmodules": [ "legends-of-the-eternal-night.mjs" ],
+    "styles": [
+      "styles/system-styles.css"
+    ],
+    "documentTypes": {
+      "Actor": {
+        "character": { }
+      },
+      "Item": {
+        "weapon": {}
+      }
+    },
+    "packs": [{
+        "name": "monsters",
+        "label": "Compendio de monstruos",
+        "type": "Actor"
+      },
+      {
+        "name": "items",
+        "label": "Compendio de objetos",
+        "type": "Item"
+    }],
+    "languages": [{
+      "lang": "es",
+      "name": "Español",
+      "path": "./lang/es.json",
+      "flags": {}
+    }],
+    "socket": false,
+    "grid": {
+      "distance": 3,
+      "units": "m"
+    },
+    "primaryTokenAttribute": "resources.health",
+    "secondaryTokenAttribute": "resources.power",
+    "url": "repo.com",
+    "manifest": "repo.com/system.json",
+    "download": "repo.com/file.zip"
+}  

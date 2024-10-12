@@ -1,0 +1,43 @@
+{
+    "COMMON": {
+      "name": "Nombre",
+      "type": "Tipo",
+      "level": "Nivel",
+      "goodness": "Bondad",
+      "biography": "Biografía",
+      "health": "Salud",
+      "power": "Poder",
+      "damage": "Daño",
+      "rarity": {
+        "common": "Común",
+        "uncommon": "Poco común",
+        "rare": "Raro",
+        "legendary": "Legendario"
+      }
+    },
+    "ACTOR": {
+      "character": {
+        "sheet": {
+          "title": "Hoja de Personaje",
+          "name": "Nombre",
+          "level": "Nivel",
+          "goodness": "Bondad",
+          "biography": "Biografía"
+        },
+        "attributes": {
+          "health": "Salud",
+          "power": "Poder"
+        }
+      }
+    },
+    "ITEM": {
+      "weapon": {
+        "sheet": {
+          "title": "Hoja de Arma",
+          "damage": "Daño",
+          "rarity": "Rareza"
+        }
+      }
+    }
+  }
+  

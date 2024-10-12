@@ -1,0 +1,42 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        {{!-- Header stuff goes here --}}
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <div class="resources grid grid-2col">{{!-- resources here --}}</div>
+            <div class="abilities grid grid-3col">{{!-- abilities here --}}</div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="items">Items</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <!-- Atributos de Salud -->
+        <div class="form-group">
+            <label for="health">Salud</label>
+            <input type="number" id="health" name="data.resources.health.value" value="{{data.resources.health.value}}">
+        </div>
+        <!-- Atributos de Poder -->
+        <div class="form-group">
+            <label for="power">Poder</label>
+            <input type="number" id="power" name="data.resources.power.value" value="{{data.resources.power.value}}">
+        </div>
+        <!-- Otros Atributos -->
+        <div class="form-group">
+            <label for="level">Nivel</label>
+            <input type="number" id="level" name="data.level" value="{{data.level}}">
+        </div>
+        <div class="form-group">
+            <label for="goodness">Bondad</label>
+            <input type="number" id="goodness" name="data.goodness" value="{{data.goodness}}">
+        </div>
+    </section>
+</form>
