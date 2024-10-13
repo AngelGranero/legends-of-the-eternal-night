@@ -14,20 +14,29 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="system.health.value" class="resource-label">Health</label>
+          <label for="system.heridas.value" class="resource-label">{{localize 'LOTEN.Damage.Heridas'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+          <input type="text" name="system.heridas.value" value="{{system.heridas.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" name="system.heridas.max" value="{{system.heridas.max}}" data-dtype="Number"/>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.power.value" class="resource-label">Power</label>
+          <label for="system.mental.value" class="resource-label">{{localize 'LOTEN.Damage.Mental'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.power.value" value="{{system.power.value}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" name="system.power.max" value="{{system.power.max}}" data-dtype="Number"/>
+          <input type="text" name="system.mental.value" value="{{system.mental.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" name="system.mental.max" value="{{system.mental.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+        
+        <div class="resource flex-group-center">
+          <label for="system.arcano.value" class="resource-label">{{localize 'LOTEN.Damage.Arcano'}}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.arcano.value" value="{{system.arcano.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" name="system.arcano.max" value="{{system.arcano.max}}" data-dtype="Number"/>
           </div>
         </div>
 

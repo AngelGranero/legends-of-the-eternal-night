@@ -181,7 +181,7 @@ export class LotenActorSheet extends ActorSheet {
       onManageActiveEffect(ev, document);
     });
 
-    // Rollable abilities.
+    // Rollable skills.
     html.on('click', '.rollable', this._onRoll.bind(this));
 
     // Drag events for macros.

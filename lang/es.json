@@ -2,18 +2,25 @@
   "LOTEN": {
     "ActorName": "Nombre del Actor",
     "NewItem": "Nuevo {itemType}",
-    "Ability": {
-      "Str": { "long": "Fuerza", "abbr": "str" },
-      "Con": { "long": "Constitución", "abbr": "con" },
-      "Dex": { "long": "Destreza", "abbr": "dex" },
-      "Int": { "long": "Inteligencia", "abbr": "int" },
-      "Wis": { "long": "Sabiduría", "abbr": "wis" },
-      "Cha": { "long": "Carisma", "abbr": "cha" }
+    "Damage": {
+      "Heridas": "Heridas",
+      "Mental": "Estabilidad Mental",
+      "Arcano": "Desgaste Arcano"
+    },
+    "Skill": {
+      "Acrobacias": { "long": "Acrobacias", "abbr": "acr" },
+      "Ataque": { "long": "Ataque", "abbr": "att" },
+      "Curación": { "long": "Curación", "abbr": "cur" },
+      "Defensa": { "long": "Defensa", "abbr": "def" },
+      "Magia": { "long": "Magia", "abbr": "mag" },
+      "Percepción": { "long": "Percepción", "abbr": "per" },
+      "Persuasión": { "long": "Persuasión", "abbr": "prs" },
+      "Sigilo": { "long": "Sigilo", "abbr": "sig" }
     },
     "SheetLabels": {
       "Actor": "Hoja de Actor Loten",
       "Item": "Hoja de Objeto Loten",
-      "Features": "Características",
+      "Skills": "Habilidades",
       "Description": "Descripción",
       "Items": "Objetos",
       "Spells": "Hechizos",

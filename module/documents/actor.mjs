@@ -23,7 +23,7 @@ export class LotenActor extends Actor {
    * Augment the actor source data with additional dynamic data. Typically,
    * you'll want to handle most of your calculated/derived data in this step.
    * Data calculated in this step should generally not exist in template.json
-   * (such as ability modifiers rather than ability scores) and should be
+   * (such as skill modifiers rather than skill scores) and should be
    * available both inside and outside of character sheets (such as if an actor
    * is queried and has a roll executed directly from it).
    */
@@ -47,10 +47,10 @@ export class LotenActor extends Actor {
     // Make modifications to data here. For example:
     const systemData = actorData.system;
 
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
+    // Loop through skill scores, and add their modifiers to our sheet output.
+    for (let [key, skill] of Object.entries(systemData.skills)) {
       // Calculate the modifier using d20 rules.
-      ability.mod = Math.floor((ability.value - 10) / 2);
+//      skill.mod = Math.floor((skill.value - 10) / 2);
     }
   }
 
@@ -85,17 +85,12 @@ export class LotenActor extends Actor {
   _getCharacterRollData(data) {
     if (this.type !== 'character') return;
 
-    // Copy the ability scores to the top level, so that rolls can use
+    // Copy the skill scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
-    if (data.abilities) {
-      for (let [k, v] of Object.entries(data.abilities)) {
+    if (data.skills) {
+      for (let [k, v] of Object.entries(data.skills)) {
         data[k] = foundry.utils.deepClone(v);
       }
-    }
-
-    // Add level for easier access, or fall back to 0.
-    if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
     }
   }
 

@@ -44,7 +44,5 @@
   "grid": {
     "distance": 3,
     "units": "m"
-  },
-  "primaryTokenAttribute": "resources.health",
-  "secondaryTokenAttribute": "resources.power"
+  }
 }

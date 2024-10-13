@@ -14,27 +14,29 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="system.health.value" class="resource-label">Health</label>
+          <label for="system.heridas.value" class="resource-label">{{localize 'LOTEN.Damage.Heridas'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+          <input type="text" name="system.heridas.value" value="{{system.heridas.value}}" data-dtype="Number"/>
           <span> / </span>
-          <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+          <input type="text" name="system.heridas.max" value="{{system.heridas.max}}" data-dtype="Number"/>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.power.value" class="resource-label">Power</label>
+          <label for="system.mental.value" class="resource-label">{{localize 'LOTEN.Damage.Mental'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.power.value" value="{{system.power.value}}" data-dtype="Number"/>
+          <input type="text" name="system.mental.value" value="{{system.mental.value}}" data-dtype="Number"/>
           <span> / </span>
-          <input type="text" name="system.power.max" value="{{system.power.max}}" data-dtype="Number"/>
+          <input type="text" name="system.mental.max" value="{{system.mental.max}}" data-dtype="Number"/>
           </div>
         </div>
-
+        
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Level</label>
+          <label for="system.arcano.value" class="resource-label">{{localize 'LOTEN.Damage.Arcano'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
+          <input type="text" name="system.arcano.value" value="{{system.arcano.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" name="system.arcano.max" value="{{system.arcano.max}}" data-dtype="Number"/>
           </div>
         </div>
 
@@ -45,7 +47,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">{{localize 'LOTEN.SheetLabels.Features'}}</a>
+    <a class="item" data-tab="features">{{localize 'LOTEN.SheetLabels.Skills'}}</a>
     <a class="item" data-tab="description">{{localize 'LOTEN.SheetLabels.Description'}}</a>
     <a class="item" data-tab="items">{{localize 'LOTEN.SheetLabels.Items'}}</a>
     <a class="item" data-tab="spells">{{localize 'LOTEN.SheetLabels.Spells'}}</a>
@@ -63,12 +65,12 @@
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
-          <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
-            <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="3d6+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{localize (lookup @root.config.abilities key)}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="3d6+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+          <div class="skills flexcol">
+            {{#each system.skills as |skill key|}}
+            <div class="skill flexrow flex-group-center">
+              <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="3d6+@skills.{{key}}.value" data-label="{{localize (lookup @root.config.skills key)}}">{{localize (lookup @root.config.skills key)}}</label>
+              <input type="text" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
+              <span class="skill-mod rollable" data-roll="3d6+@skills.{{key}}.value" data-label="{{localize (lookup @root.config.skills key)}}">{{numberFormat skill.value decimals=0 sign=true}}</span>
             </div>
             {{/each}}
           </div>
@@ -77,7 +79,7 @@
         {{!-- For the main features list, span the right two columns --}}
         <section class="main grid-span-2">
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/legends-of-the-eternal-night/templates/actor/parts/actor-features.hbs"}}
+          {{> "systems/legends-of-the-eternal-night/templates/actor/parts/actor-skills.hbs"}}
         </section>
 
       </section>
