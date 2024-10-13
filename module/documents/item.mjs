@@ -44,6 +44,8 @@ export class LotenItem extends Item {
 
     // If there's no roll data, send a chat message.
     if (!this.system.formula) {
+      ui.notifications.warn("No roll formula");
+      
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,

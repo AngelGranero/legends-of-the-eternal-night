@@ -20,7 +20,7 @@ Hooks.once('init', function () {
   game.loten = {
     LotenActor,
     LotenItem,
-    rollItemMacro,
+    rollItemMacro
   };
 
   // Add custom constants for configuration.

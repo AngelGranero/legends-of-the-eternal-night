@@ -1,41 +1,42 @@
 {
   "LOTEN": {
+    "ActorName": "Nombre del Actor",
+    "NewItem": "Nuevo {itemType}",
     "Ability": {
-      "Str": { "long": "Strength", "abbr": "str" },
-      "Con": { "long": "Constitution", "abbr": "con" },
-      "Dex": { "long": "Dexterity", "abbr": "dex" },
-      "Int": { "long": "Intelligence", "abbr": "int" },
-      "Wis": { "long": "Wisdom", "abbr": "wis" },
-      "Cha": { "long": "Charisma", "abbr": "cha" }
+      "Str": { "long": "Fuerza", "abbr": "str" },
+      "Con": { "long": "Constitución", "abbr": "con" },
+      "Dex": { "long": "Destreza", "abbr": "dex" },
+      "Int": { "long": "Inteligencia", "abbr": "int" },
+      "Wis": { "long": "Sabiduría", "abbr": "wis" },
+      "Cha": { "long": "Carisma", "abbr": "cha" }
     },
     "SheetLabels": {
-      "Actor": "Loten Actor Sheet",
-      "Item": "Loten Item Sheet"
+      "Actor": "Hoja de Actor Loten",
+      "Item": "Hoja de Objeto Loten"
     },
     "Item": {
       "Spell": {
-        "SpellLVL": "Level {level} Spells",
-        "AddLVL": "Add LVL {level}"
+        "SpellLVL": "Hechizos de Nivel {level}",
+        "AddLVL": "Añadir Nivel {level}"
       }
     },
     "Effect": {
-      "Source": "Source",
-      "Toggle": "Toggle Effect",
-      "Temporary": "Temporary Effects",
-      "Passive": "Passive Effects",
-      "Inactive": "Inactive Effects"
+      "Source": "Fuente",
+      "Toggle": "Alternar Efecto",
+      "Temporary": "Efectos Temporales",
+      "Passive": "Efectos Pasivos",
+      "Inactive": "Efectos Inactivos"
     }
   },
-
   "TYPES": {
     "Actor": {
-      "character": "Character",
-      "npc": "NPC"
+      "character": "Personaje",
+      "npc": "PNC"
     },
     "Item": {
-      "item": "Item",
-      "feature": "Feature",
-      "spell": "Spell"
+      "item": "Objeto",
+      "feature": "Característica",
+      "spell": "Hechizo"
     }
   }
 }
