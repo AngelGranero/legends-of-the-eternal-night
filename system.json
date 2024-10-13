@@ -22,7 +22,7 @@
     "verified": 12
   },
   "esmodules": [ "module/legends-of-the-eternal-night.mjs" ],
-  "styles": [ "css/system-styles.css" ],
+  "styles": [ "css/legends-of-the-eternal-night-styles.css" ],
   "languages": [
     {
       "lang": "es",
