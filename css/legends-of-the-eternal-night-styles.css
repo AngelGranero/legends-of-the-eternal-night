@@ -353,14 +353,3 @@
   flex: 0 0 200px;
   padding: 0 8px;
 }
-.loten .effects .item .effect-source,
-.loten .effects .item .effect-duration,
-.loten .effects .item .effect-controls {
-  text-align: center;
-  border-left: 1px solid #c9c7b8;
-  border-right: 1px solid #c9c7b8;
-  font-size: 12px;
-}
-.loten .effects .item .effect-controls {
-  border: none;
-}

@@ -1,8 +1,3 @@
-import {
-  onManageActiveEffect,
-  prepareActiveEffectCategories,
-} from '../helpers/effects.mjs';
-
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -74,13 +69,6 @@ export class LotenActorSheet extends ActorSheet {
         // Relative UUID resolution
         relativeTo: this.actor,
       }
-    );
-
-    // Prepare active effects
-    context.effects = prepareActiveEffectCategories(
-      // A generator that returns all effects stored on the actor
-      // as well as any items
-      this.actor.allApplicableEffects()
     );
 
     return context;
@@ -169,16 +157,6 @@ export class LotenActorSheet extends ActorSheet {
       const item = this.actor.items.get(li.data('itemId'));
       item.delete();
       li.slideUp(200, () => this.render(false));
-    });
-
-    // Active Effect management
-    html.on('click', '.effect-control', (ev) => {
-      const row = ev.currentTarget.closest('li');
-      const document =
-        row.dataset.parentId === this.actor.id
-          ? this.actor
-          : this.actor.items.get(row.dataset.parentId);
-      onManageActiveEffect(ev, document);
     });
 
     // Rollable skills.

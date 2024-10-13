@@ -8,9 +8,7 @@ export const preloadHandlebarsTemplates = async function () {
     // Actor partials.
     'systems/legends-of-the-eternal-night/templates/actor/parts/actor-skills.hbs',
     'systems/legends-of-the-eternal-night/templates/actor/parts/actor-items.hbs',
-    'systems/legends-of-the-eternal-night/templates/actor/parts/actor-spells.hbs',
-    'systems/legends-of-the-eternal-night/templates/actor/parts/actor-effects.hbs',
+    'systems/legends-of-the-eternal-night/templates/actor/parts/actor-spells.hbs'
     // Item partials
-    'systems/legends-of-the-eternal-night/templates/item/parts/item-effects.hbs',
   ]);
 };

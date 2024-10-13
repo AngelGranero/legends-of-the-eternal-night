@@ -1,8 +1,3 @@
-import {
-  onManageActiveEffect,
-  prepareActiveEffectCategories,
-} from '../helpers/effects.mjs';
-
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -68,9 +63,6 @@ export class LotenItemSheet extends ItemSheet {
     // Adding a pointer to CONFIG.LOTEN
     context.config = CONFIG.LOTEN;
 
-    // Prepare active effects for easier access
-    context.effects = prepareActiveEffectCategories(this.item.effects);
-
     return context;
   }
 
@@ -86,8 +78,6 @@ export class LotenItemSheet extends ItemSheet {
     // Roll handlers, click handlers, etc. would go here.
 
     // Active Effect management
-    html.on('click', '.effect-control', (ev) =>
-      onManageActiveEffect(ev, this.item)
-    );
+
   }
 }

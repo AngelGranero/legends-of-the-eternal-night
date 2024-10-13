@@ -23,21 +23,13 @@
       "Skills": "Habilidades",
       "Description": "Descripción",
       "Items": "Objetos",
-      "Spells": "Hechizos",
-      "Effects": "Efectos"
+      "Spells": "Hechizos"
     },
     "Item": {
       "Spell": {
         "SpellLVL": "Hechizos de Nivel {level}",
         "AddLVL": "Añadir Nivel {level}"
       }
-    },
-    "Effect": {
-      "Source": "Fuente",
-      "Toggle": "Alternar Efecto",
-      "Temporary": "Efectos Temporales",
-      "Passive": "Efectos Pasivos",
-      "Inactive": "Efectos Inactivos"
     }
   },
   "TYPES": {
