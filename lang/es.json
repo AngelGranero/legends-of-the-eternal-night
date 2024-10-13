@@ -12,7 +12,12 @@
     },
     "SheetLabels": {
       "Actor": "Hoja de Actor Loten",
-      "Item": "Hoja de Objeto Loten"
+      "Item": "Hoja de Objeto Loten",
+      "Features": "Características",
+      "Description": "Descripción",
+      "Items": "Objetos",
+      "Spells": "Hechizos",
+      "Effects": "Efectos"
     },
     "Item": {
       "Spell": {

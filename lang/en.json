@@ -10,7 +10,12 @@
     },
     "SheetLabels": {
       "Actor": "Loten Actor Sheet",
-      "Item": "Loten Item Sheet"
+      "Item": "Loten Item Sheet",
+      "Features": "Features",
+      "Description": "Description",
+      "Items": "Items",
+      "Spells": "Spells",
+      "Effects": "Effects"
     },
     "Item": {
       "Spell": {
