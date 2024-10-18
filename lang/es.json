@@ -39,6 +39,7 @@
     },
     "Item": {
       "item": "Objeto",
+      "race": "Raza",
       "feature": "Característica",
       "spell": "Hechizo"
     }

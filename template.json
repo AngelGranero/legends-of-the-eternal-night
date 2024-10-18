@@ -26,14 +26,14 @@
       "attributes": {
       },
       "skills": {
-        "acrobacias": { "value": 0 },
-        "ataque": { "value": 0 },
-        "curacion": { "value": 0 },
-        "defensa": { "value": 0 },
-        "magia": { "value": 0 },
-        "percepcion": { "value": 0 },
-        "persuasion": { "value": 0 },
-        "sigilo": { "value": 0 }
+        "acrobacias": { "value": 0, "mod": 0 },
+        "ataque": { "value": 0, "mod": 0 },
+        "curacion": { "value": 0, "mod": 0 },
+        "defensa": { "value": 0, "mod": 0 },
+        "magia": { "value": 0, "mod": 0 },
+        "percepcion": { "value": 0, "mod": 0 },
+        "persuasion": { "value": 0, "mod": 0 },
+        "sigilo": { "value": 0, "mod": 0 }
       }
     },
     "npc": {
@@ -42,7 +42,7 @@
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["item", "race", "feature", "spell"],
     "templates": {
       "base": {
         "description": ""
@@ -53,6 +53,19 @@
       "quantity": 1,
       "weight": 0,
       "formula": "3d6 + @str.mod + ceil(@lvl / 2)"
+    },
+    "race": {
+      "templates": ["base"],
+      "skills": {
+        "acrobacias": { "value": 0 },
+        "ataque": { "value": 0 },
+        "curacion": { "value": 0 },
+        "defensa": { "value": 0 },
+        "magia": { "value": 0 },
+        "percepcion": { "value": 0 },
+        "persuasion": { "value": 0 },
+        "sigilo": { "value": 0 }
+      }
     },
     "feature": {
       "templates": ["base"]

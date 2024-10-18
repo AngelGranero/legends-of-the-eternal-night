@@ -92,6 +92,7 @@ export class LotenActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
+    let race = {};
     const features = [];
     const spells = {
       0: [],
@@ -109,9 +110,14 @@ export class LotenActorSheet extends ActorSheet {
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || Item.DEFAULT_ICON;
+
       // Append to gear.
       if (i.type === 'item') {
         gear.push(i);
+      }
+      // Append to race
+      else if (i.type === 'race') {
+        race = i;
       }
       // Append to features.
       else if (i.type === 'feature') {

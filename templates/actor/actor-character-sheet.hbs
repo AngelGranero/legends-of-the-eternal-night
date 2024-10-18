@@ -2,12 +2,13 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'LOTEN.ActorName'}}"/></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
+          placeholder="{{localize 'LOTEN.ActorName'}}" /></h1>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
-      from 1 to 12 and will create that number of columns.  --}}
+      from 1 to 12 and will create that number of columns. --}}
       <div class="resources grid grid-3col">
 
         {{!-- "flex-group-center" is also defined in the _grid.scss file
@@ -16,27 +17,27 @@
         <div class="resource flex-group-center">
           <label for="system.heridas.value" class="resource-label">{{localize 'LOTEN.Damage.Heridas'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.heridas.value" value="{{system.heridas.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.heridas.max" value="{{system.heridas.max}}" data-dtype="Number"/>
+            <input type="text" name="system.heridas.value" value="{{system.heridas.value}}" data-dtype="Number" />
+            <span> / </span>
+            <input type="text" name="system.heridas.max" value="{{system.heridas.max}}" data-dtype="Number" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
           <label for="system.mental.value" class="resource-label">{{localize 'LOTEN.Damage.Mental'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.mental.value" value="{{system.mental.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.mental.max" value="{{system.mental.max}}" data-dtype="Number"/>
+            <input type="text" name="system.mental.value" value="{{system.mental.value}}" data-dtype="Number" />
+            <span> / </span>
+            <input type="text" name="system.mental.max" value="{{system.mental.max}}" data-dtype="Number" />
           </div>
         </div>
-        
+
         <div class="resource flex-group-center">
           <label for="system.arcano.value" class="resource-label">{{localize 'LOTEN.Damage.Arcano'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.arcano.value" value="{{system.arcano.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.arcano.max" value="{{system.arcano.max}}" data-dtype="Number"/>
+            <input type="text" name="system.arcano.value" value="{{system.arcano.value}}" data-dtype="Number" />
+            <span> / </span>
+            <input type="text" name="system.arcano.max" value="{{system.arcano.max}}" data-dtype="Number" />
           </div>
         </div>
 
@@ -63,38 +64,45 @@
 
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
+          from 1 to 12 and will create that number of columns. --}}
           <div class="skills flexcol">
             {{#each system.skills as |skill key|}}
             <div class="skill flexrow flex-group-center">
-              <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="3d6+@skills.{{key}}.value" data-label="{{localize (lookup @root.config.skills key)}}">{{localize (lookup @root.config.skills key)}}</label>
-              <input type="text" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
-              <span class="skill-mod rollable" data-roll="3d6+@skills.{{key}}.value" data-label="{{localize (lookup @root.config.skills key)}}">{{numberFormat skill.value decimals=0 sign=true}}</span>
+              <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left"
+                data-roll="3d6+@skills.{{key}}.value"
+                data-label="{{localize (lookup @root.config.skills key)}}">{{localize (lookup @root.config.skills
+                key)}}</label>
+              <input type="text" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number" />
+              <span class="skill-mod rollable" data-roll="3d6+@skills.{{key}}.mod"
+                data-label="{{localize (lookup @root.config.skills key)}}">{{numberFormat skill.mod decimals=0
+                sign=true}}</span>
             </div>
             {{/each}}
           </div>
         </aside>
+        
+  </section>
+  </div>
 
-      </section>
-    </div>
+  {{!-- Biography Tab --}}
+  <div class="tab biography" data-group="primary" data-tab="description">
+    {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
+    {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+  </div>
 
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
-    </div>
+  {{!-- Owned Items Tab --}}
+  <div class="tab items" data-group="primary" data-tab="items">
+    {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in
+    module/helpers/templates.mjs --}}
+    {{> "systems/legends-of-the-eternal-night/templates/actor/parts/actor-items.hbs"}}
+  </div>
 
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-      {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-      {{> "systems/legends-of-the-eternal-night/templates/actor/parts/actor-items.hbs"}}
-    </div>
-
-    {{!-- Owned Spells Tab --}}
-    <div class="tab spells" data-group="primary" data-tab="spells">
-      {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-      {{> "systems/legends-of-the-eternal-night/templates/actor/parts/actor-spells.hbs"}}
-    </div>
+  {{!-- Owned Spells Tab --}}
+  <div class="tab spells" data-group="primary" data-tab="spells">
+    {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in
+    module/helpers/templates.mjs --}}
+    {{> "systems/legends-of-the-eternal-night/templates/actor/parts/actor-spells.hbs"}}
+  </div>
 
   </section>
 </form>

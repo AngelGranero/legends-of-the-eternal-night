@@ -1,0 +1,17 @@
+<section class="grid grid-3col">
+  <aside class="sidebar">
+
+    {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+    use both the "grid" and "grid-Ncol" class where "N" can be any number
+    from 1 to 12 and will create that number of columns.  --}}
+    <div class="skills flexcol">
+      {{#each system.skills as |skill key|}}
+      <div class="skill flexrow flex-group-center">
+        <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="3d6+@skills.{{key}}.value" data-label="{{localize (lookup @root.config.skills key)}}">{{localize (lookup @root.config.skills key)}}</label>
+        <input type="text" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
+      </div>
+      {{/each}}
+    </div>
+  </aside>
+
+</section>

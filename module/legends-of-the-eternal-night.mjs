@@ -88,11 +88,13 @@ Hooks.once('ready', function () {
 async function createItemMacro(data, slot) {
   // First, determine if this is a valid owned item.
   if (data.type !== 'Item') return;
+
   if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {
     return ui.notifications.warn(
       'You can only create macro buttons for owned Items'
     );
   }
+
   // If it is, retrieve it based on the uuid.
   const item = await Item.fromDropData(data);
 
@@ -110,7 +112,9 @@ async function createItemMacro(data, slot) {
       flags: { 'loten.itemMacro': true }
     });
   }
+
   game.user.assignHotbarMacro(macro, slot);
+
   return false;
 }
 
@@ -125,6 +129,7 @@ function rollItemMacro(itemUuid) {
     type: 'Item',
     uuid: itemUuid,
   };
+  
   // Load the item from the uuid.
   Item.fromDropData(dropData).then((item) => {
     // Determine if the item loaded and if it's an owned item.
