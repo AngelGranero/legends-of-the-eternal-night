@@ -47,11 +47,29 @@ export class LotenActor extends Actor {
     // Make modifications to data here. For example:
     const systemData = actorData.system;
 
-    // Loop through skill scores, and add their modifiers to our sheet output.
-    for (let [key, skill] of Object.entries(systemData.skills)) {
-      // Calculate the modifier using d20 rules.
-//      skill.mod = Math.floor((skill.value - 10) / 2);
+    const modificatorSkills = this._calculateModificatorSkills(systemData);
+
+  }
+
+  _calculateModificatorSkills(systemData) {
+    const skills = { };
+
+    // Accumulate all skill modifications from Modificator items
+    for (let item of this.items) {
+        if (item.type === "modificator") {
+            for (let skillName of Object.keys(CONFIG.LOTEN.skills)) {
+                skills[skillName] = (skills[skillName] ?? 0) + (item.system.skills[skillName]?.value ?? 0);
+            }
+        }
     }
+
+    // Loop through skill scores, and add their modifiers to our sheet output
+    for (let [key, skill] of Object.entries(systemData.skills)) {
+        // Calculate the skill value based on equipped modificators
+        skill.mod = skill.value + (skills[key] ?? 0);
+    }
+
+    return skills;
   }
 
   /**

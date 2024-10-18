@@ -23,6 +23,7 @@
       "Skills": "Skills",
       "Description": "Description",
       "Items": "Items",
+      "Modificators": "Modificators",
       "Spells": "Spells"
     },
     "Item": {
@@ -39,7 +40,7 @@
     },
     "Item": {
       "item": "Item",
-      "race": "Race",
+      "modificator": "Modificator",
       "feature": "Feature",
       "spell": "Spell"
     }

@@ -23,6 +23,7 @@
       "Skills": "Habilidades",
       "Description": "Descripción",
       "Items": "Objetos",
+      "Modificators": "Modificadores",
       "Spells": "Hechizos"
     },
     "Item": {
@@ -39,7 +40,7 @@
     },
     "Item": {
       "item": "Objeto",
-      "race": "Raza",
+      "modificator": "Modificador",
       "feature": "Característica",
       "spell": "Hechizo"
     }

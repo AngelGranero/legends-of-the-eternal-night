@@ -59,30 +59,43 @@
 
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
-      <section class="grid grid-3col">
+      <section class="grid grid-2col">
         <aside class="sidebar">
-
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns. --}}
-          <div class="skills flexcol">
-            {{#each system.skills as |skill key|}}
-            <div class="skill flexrow flex-group-center">
-              <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left"
-                data-roll="3d6+@skills.{{key}}.value"
-                data-label="{{localize (lookup @root.config.skills key)}}">{{localize (lookup @root.config.skills
-                key)}}</label>
-              <input type="text" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number" />
-              <span class="skill-mod rollable" data-roll="3d6+@skills.{{key}}.mod"
-                data-label="{{localize (lookup @root.config.skills key)}}">{{numberFormat skill.mod decimals=0
-                sign=true}}</span>
-            </div>
-            {{/each}}
+          <div class="items flexcol">
+            <ol class='items-list'>
+              <li class='item flexrow items-header'>
+                <div class='item-name'>{{localize 'Name'}}</div>
+                <div class='item-progresion'>{{localize 'Progresión'}}</div>
+                <div class='item-total'>{{localize 'Total'}}</div>
+              </li>
+            
+              {{#each system.skills as |skill key|}}
+              <li class='item flexrow' data-item-id='{{item._id}}'>
+                <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left"
+                  data-roll="3d6+@skills.{{key}}.value" data-label="{{localize (lookup @root.config.skills key)}}">{{localize
+                  (lookup @root.config.skills
+                  key)}}</label>
+                <input type="text" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number" />
+                <div class="item-prop rollable" data-roll="3d6+@skills.{{key}}.mod"
+                  data-label="{{localize (lookup @root.config.skills key)}}">{{numberFormat skill.mod decimals=0
+                  sign=true}}</div>
+              </li>
+              {{/each}}
+            </ol>
           </div>
         </aside>
-        
-  </section>
-  </div>
+        <aside class="sidebar">
+          {{!-- For the main features list, span the right two columns --}}
+          <section class="main grid-span-2">
+            {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
+            {{> "systems/legends-of-the-eternal-night/templates/actor/parts/actor-modificators.hbs"}}
+          </section>
+        </aside>        
+      </section>
+    </div>
 
   {{!-- Biography Tab --}}
   <div class="tab biography" data-group="primary" data-tab="description">

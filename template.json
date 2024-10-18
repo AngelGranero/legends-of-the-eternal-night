@@ -42,7 +42,7 @@
     }
   },
   "Item": {
-    "types": ["item", "race", "feature", "spell"],
+    "types": ["item", "modificator", "feature", "spell"],
     "templates": {
       "base": {
         "description": ""
@@ -54,7 +54,7 @@
       "weight": 0,
       "formula": "3d6 + @str.mod + ceil(@lvl / 2)"
     },
-    "race": {
+    "modificator": {
       "templates": ["base"],
       "skills": {
         "acrobacias": { "value": 0 },
